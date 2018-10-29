@@ -4,9 +4,13 @@ Flight Command and Telemetry
 GPS Objective (test run):
 
 For telemetry we need to recieve a csv file containing gps data from Sensor Collection Team such as: 
+
 latitude, longitude, altitude
+
 1,2,3
+
 34.56,0.999,23.23
+
 etc.
 
 We will parse the csv file to get the data that we need and then store the data into a telemtry record 
