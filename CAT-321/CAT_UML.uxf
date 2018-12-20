@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>128</x>
+      <y>136</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;boundary&gt;&gt;
+{GPS}
+--
+-latitude: Float 
+-longitude: Float
+-altitude: Float 
+--
++getLat():Float 
++getLong():Float 
++getAlt():Float 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>136</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;control&gt;&gt;
+
+{Collect SensorData}
+--
+-myGPS: GPS
+
+--
++startCollection(): void 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>440</y>
+      <w>208</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+{TelemetryDB}
+--
+-Telemetry[]: TelemetryRecord 
+-recordCount: int 
+--
++addRecord(t: Telemetry):void
++getNumberOfRecords():int 
++getLastRecord():TelemetryRecord
++getRecord(i:index):TelemetryRecord </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>416</y>
+      <w>168</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;entity&gt;&gt;
+
+{TelemetryRecord}
+--
+-latitude:
+-longitude: 
+-altitude: 
+-temperature:
+-humidity:
+-roll:
+-pitch:
+-yaw:
+-faultCodes: 
+--
++createNewRecord(...):void 
++add...(..):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>712</x>
+      <y>584</y>
+      <w>240</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Note
+Constructor parameters needed
+
+add.. could be addLatitude(lat:float) 
+					addLongitude(lon:float)
+					addXX(x:type);
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>208</y>
+      <w>272</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+monitors position 
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;30.0;320.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>248</y>
+      <w>264</w>
+      <h>296</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Update Telemetry Database 
+m1=   1
+m2= 1 </panel_attributes>
+    <additional_attributes>10.0;350.0;180.0;20.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>280</y>
+      <w>152</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+   Build telemetryRecord 
+m2=1
+m1= 0..n</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>560</y>
+      <w>272</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;20.0;320.0;20.0</additional_attributes>
+  </element>
+</diagram>

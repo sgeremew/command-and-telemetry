@@ -1,0 +1,14 @@
+#Folder Organization and Content: 
+
+ControlHub will be our main program: 
+client.py: is client code to connect to the Sensor Collection Group's pi
+
+Folders: 
+
+- Radio
+   * Radio.py
+- DataBases 
+   * commandBase.py 
+   * command.py
+   * TelRec.py 
+   * // telemetry pending
